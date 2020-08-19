@@ -9,6 +9,10 @@
  let nome = window.document.getElementById("nome")
  let email= document.querySelector("#e-mail") /*#chamando id, se fosse classe .*/
  let comentario=document.querySelector("#Comentário")
+ let nomeOk = false
+ let emailOk = false
+ let comentarioOk = false
+ let mapa = document.querySelector("#mapa")
 
  /*aumentando o campo de preenchimento de nome e email se igualando ao assunto*/
 nome.style.width ="100%"
@@ -24,6 +28,7 @@ function validaNome() {
     } else{
         txtNome.innerHTML="Nome Válido"
         txtNome.style.color="green"
+        nomeOk = true
     }
 
 }
@@ -36,5 +41,35 @@ function validaEmail () {
     } else {
         txtEmail.innerHTML = "E-mail Válido"
         txtEmail.style.color= "green"
+        emailOk = true
     }
 }
+function validaComentario (){
+    let txtComentario = document.querySelector("#txtComentario")
+
+    if (comentario.value.length >=100){
+        txtComentario.innerHTML = "Digite no máximo 100 caracteres"
+        txtComentario.style.color = "red"
+        txtComentario.style.display = "block"
+    } else {
+        txtComentario.style.display = "none"
+        comentarioOk = true
+
+    }
+}
+function enviar(){
+    if (nomeOk == true && emailOk == true && comentarioOk == true){
+        alert ("Formulário enviado com sucesso!")
+    } else {
+        alert ("Preencha o formulário corretamente!")
+    }
+}
+function mapaZoom() {
+    mapa.style.width = '800px'
+    mapa.style.height = '600px'
+ }
+ 
+ function mapaNormal() {
+    mapa.style.width = '400px'
+    mapa.style.height = '250px'
+ }
