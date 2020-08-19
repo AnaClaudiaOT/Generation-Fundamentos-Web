@@ -44,6 +44,7 @@ function validaEmail () {
         emailOk = true
     }
 }
+<<<<<<< HEAD
 function validaComentario (){
     let txtComentario = document.querySelector("#txtComentario")
 
@@ -73,3 +74,5 @@ function mapaZoom() {
     mapa.style.width = '400px'
     mapa.style.height = '250px'
  }  
+=======
+>>>>>>> 8e3a7316cf13091397a1b40b4381ba901ad552ff
